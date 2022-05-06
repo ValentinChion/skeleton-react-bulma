@@ -1,0 +1,64 @@
+@import 'bulma/sass/utilities/derived-variables';
+@import './variables.scss';
+
+.cool-tooltip {
+    position: absolute;
+    width: max-content;
+    font-size: 14px;
+    background-color: $white;
+    color: $white;
+    border-radius: 5px !important;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.cool-tooltip:not(.no-diamond)::before {
+    position: absolute;
+    content: '';
+    height: 8px;
+    width: 8px;
+    background-color: $white;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.cool-tooltip.top:not(.no-diamond)::before {
+    bottom: -3px;
+}
+
+.cool-tooltip.is-active {
+    padding: 5px 8px;
+    opacity: 1;
+    visibility: visible;
+}
+
+.cool-tooltip.top {
+    top: -45px;
+}
+
+.cool-tooltip.bottom {
+    bottom: 0px;
+}
+
+.cool-tooltip.bottom:not(.no-diamond)::before {
+    top: -3px;
+}
+
+.cool-tooltip.left:not(.no-diamond)::before {
+    top: 45%;
+    left: 0px;
+}
+
+.cool-tooltip {
+    &.is-primary {
+        background-color: $primary;
+        color: $white !important;
+    }
+
+    &:not(.no-diamond)::before {
+        background-color: $primary;
+    }
+}

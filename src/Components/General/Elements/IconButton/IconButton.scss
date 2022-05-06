@@ -1,0 +1,23 @@
+.container-is-icon {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.is-button-icon {
+    padding: 0;
+    border: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #fff;
+    border-radius: 25px;
+
+    span {
+        margin: 0;
+        font-size: 25px;
+        background-color: #fff;
+
+        i {
+            color: #48c774;
+        }
+    }
+}

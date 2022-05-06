@@ -1,0 +1,10 @@
+@import '../../../../assets/scss/variables.scss';
+
+.dropdown-item {
+    cursor: pointer;
+
+    &:hover {
+        background-color: $primary;
+        color: white;
+    }
+}

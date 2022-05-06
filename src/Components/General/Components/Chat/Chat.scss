@@ -1,0 +1,93 @@
+@import 'bulma/sass/utilities/derived-variables';
+@import '../../../../assets/scss/variables.scss';
+
+.chat-animated {
+    border-radius: 20px;
+    width: 50px;
+    height: 50px;
+    transition: width 0.6s ease, height 0.7s ease 0.6s, opacity 0.7s;
+    opacity: 0;
+
+    .is-chat-hidden {
+        opacity: 0;
+        transition: opacity 0.1s ease 1.3s;
+
+        &.active {
+            opacity: 1;
+        }
+    }
+}
+
+.chat-animated.active {
+    border-radius: 20px;
+    width: 300px;
+    height: 400px;
+    background: #fff;
+    box-shadow: 40px 40px 40px #cccccc, 0 0 0 #ffffff, 0 0 0 #cccccc inset;
+    opacity: 1;
+}
+
+.chat-main-wrapper {
+    height: 300px;
+}
+
+.chat-container {
+    height: 85%;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+
+    &.in-full-container {
+        height: 75vh;
+    }
+}
+
+.msg-wrapper {
+    width: 100%;
+    margin-bottom: 10px;
+
+    &.from-me {
+        .msg {
+            border-bottom-right-radius: 0;
+            background-color: $primary;
+            color: $white;
+        }
+
+        .msg-subwrapper {
+            float: right;
+
+            .username {
+                text-align: right;
+                margin-right: 6px;
+            }
+        }
+    }
+
+    &.from-foreign {
+        .msg {
+            border-top-left-radius: 0;
+            background-color: $grey-lightest;
+        }
+    }
+
+    .msg {
+        width: fit-content;
+        padding: 5px 9px;
+        margin-right: 6px;
+        border-radius: 18px;
+        white-space: pre-wrap;
+        word-break: break-word;
+    }
+
+    .username {
+        font-size: 14px;
+    }
+}
+
+.msg-not-read {
+    font-weight: 600;
+
+    .full-name {
+        color: $primary !important;
+    }
+}

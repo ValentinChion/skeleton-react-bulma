@@ -1,0 +1,35 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": ["eslint-config-google", "prettier"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["eslint-plugin-react", "react"],
+  "rules": {
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
+    "no-console": 1,
+    "require-jsdoc": 0,
+    "quotes": ["error", "single", { "avoidEscape": true }],
+    "operator-linebreak": [
+      "error",
+      "after",
+      { "overrides": { "?": "before", ":": "before" } }
+    ],
+    "max-len": [
+      "error",
+      {
+        "code": 150,
+        "tabWidth": 4,
+        "ignoreStrings": true
+      }
+    ]
+  }
+}

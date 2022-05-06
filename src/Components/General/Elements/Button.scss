@@ -1,0 +1,83 @@
+@import 'bulma/sass/utilities/derived-variables';
+@import '../../../assets/scss/variables.scss';
+
+.shady-container {
+    display: inline-flex;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+
+    .shady-button {
+        position: relative;
+        background-color: $white;
+        border-radius: 50%;
+        padding: 15px;
+        margin: 10px;
+        width: 50px;
+        height: 50px;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .shady-tooltip {
+        position: absolute;
+        top: 0;
+        width: max-content;
+        font-size: 14px;
+        background-color: $white;
+        color: $white;
+        padding: 5px 8px;
+        border-radius: 5px;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .shady-tooltip::before {
+        position: absolute;
+        content: '';
+        height: 8px;
+        width: 8px;
+        background-color: $white;
+        bottom: -3px;
+        left: 50%;
+        transform: translate(-50%) rotate(45deg);
+        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .shady-button:hover .shady-tooltip.is-active {
+        top: -45px;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .shady-button:hover span,
+    .shady-button:hover .shady-tooltip {
+        text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+    }
+
+    .is-primary:hover,
+    .is-primary:hover .shady-tooltip,
+    .is-primary:hover .shady-tooltip::before {
+        background-color: $link;
+        color: $white;
+    }
+
+    .is-dark:hover,
+    .is-dark:hover .shady-tooltip,
+    .is-dark:hover .shady-tooltip::before {
+        background-color: $dark;
+        color: $white;
+    }
+}
+
+button.is-shady {
+    box-shadow: $shadow;
+}
